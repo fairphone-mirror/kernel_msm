@@ -382,7 +382,7 @@ pxa3xx_gcu_misc_write(struct file *filp, const char *buff,
 	struct pxa3xx_gcu_priv *priv =
 		container_of(filp->f_op, struct pxa3xx_gcu_priv, misc_fops);
 
-	int words = count / 4;
+	size_t words = count / 4;
 
 	/* Does not need to be atomic. There's a lock in user space,
 	 * but anyhow, this is just for statistics. */
